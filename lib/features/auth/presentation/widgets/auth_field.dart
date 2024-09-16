@@ -16,6 +16,15 @@ class AuthField extends StatelessWidget {
       decoration: InputDecoration(hintText: hintText),
       controller: controller,
       obscureText: isObscureText,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter some text';
+        }
+        if (value.length < 4) {
+          return '$hintText must be at least 4 characters long';
+        }
+        return null;
+      },
     );
   }
 }

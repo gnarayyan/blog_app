@@ -1,5 +1,6 @@
 import 'package:blog_app/core/common/widgets/loader.dart';
 import 'package:blog_app/core/utils/show_snackbar.dart';
+import 'package:blog_app/features/home/presentation/pages/home_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/auth_bloc.dart';
@@ -67,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                                     password: passwordController.text.trim(),
                                   ),
                                 );
+                            Navigator.push(context, HomePage.route());
                           }
                         }),
                     const SizedBox(height: 10),

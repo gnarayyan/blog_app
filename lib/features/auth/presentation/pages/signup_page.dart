@@ -33,6 +33,7 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10),
@@ -80,6 +81,8 @@ class _SignupPageState extends State<SignupPage> {
                                     password: passwordController.text.trim(),
                                   ),
                                 );
+
+                            Navigator.push(context, LoginPage.route());
                           }
                         }),
                     const SizedBox(height: 10),
